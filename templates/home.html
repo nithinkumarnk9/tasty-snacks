@@ -3,51 +3,501 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
-    <title>Title</title>
+    <title>TASTY-SNACKS</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <style>
-    .image-container {
-      position: relative;
-      height: 100vh;
-    }
+    .card {
+            position: relative;
+            overflow: hidden;
+        }
 
-    /* Overlay fade-in box */
-    .overlay-box {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(0, 0, 0, 0.75);
-      color: white;
-      padding: 20px;
-      border-radius: 10px;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.5s, visibility 0.5s;
-      text-align: center;
-    }
+        .card img {
+            transition: transform 0.3s ease;
+        }
 
-    /* Hover effect to display the overlay */
-    .image-container:hover .overlay-box {
-      opacity: 1;
-      visibility: visible;
+        .card:hover img {
+            transform: scale(1.1); /* Zoom effect on hover */
+        }
+
+        .cart-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 0, 0, 0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .card:hover .cart-tag {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in-box {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .card:hover .fade-in-box {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    .card {
+    position: relative;
+    overflow: hidden;
+    }
+    card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    }
+    card:hover card-overlay {
+    opacity: 1;
+    }
+    filter-btn {
+    margin: 0.5rem;
+    }
+    h2 {
+    font-family: Pacifico;
+    }
+    h5 {
+    font-family: Playfair Display;
+    }
+    h3 {
+    font-family:Roboto slab;
+    }
+    p {
+    font-family: Poppins;
     }
 </style>
 <body>
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhWqMyVNyW92owHasea516uGkGBKAost0MIUildiozrlOVjyD42hUG8QiZW5xHR5hQD3UhUMeMnLmy5rz9j8jItVROxIO52GZPqgMb4gAj4KwNQO2MN__VCCryQKHYnv6u9Cqgy7yN54xPvw6hTwKLYyXFYTdkVYlFpkA-45R17WepR8XAVWs-Dd1uRRXo3/s1280/maxresdefault%20%2812%29.jpg" alt="First slide">
+      <img class="d-block w-100" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOsY1GSFMeSzs-YU9TSrIlcuWPUoslU-gfswiz_6sZap6aRxK-uYGBxjNIEpgXapre9e-jbKdayByy7nM86ZwsxSJMK12t-SCxFOPNJ7JnM4ClVCA4ZxlNb5qJnqjA66W0Qf99WMS-AyqSytujXXTLivNTYWwAfrVrsskEM__SO-tPgsYeOuXLW1RLKyPO/s1280/maxresdefault%20%2831%29.jpg" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Second slide">
+      <img class="d-block w-100" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikJZJTN2Mkx29aU48xT0OB-rE1qAd6isOzL0ss19MrHut2kCBoCRLSI9DaRmKa8hkbVhZOkViSieE3ju7tqUfTT4GNlwSsjfhQiPNmJnwc6J9WBjRLcIsjLMXtN2NAp3IuEtRqdbIj6xJizhH1OkmUkwW2gOW85-SllR7qnQuW78RHONjnHlc4bdoKynWz/s1300/different-tasty-snacks-for-wine-on-luxury-banquet-table-FNFDB8.jpg" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Third slide">
+      <img class="d-block w-100" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7VeUp9QsgEv_o2XtoynvXIWrBDakIL-N3cYd4ti_onZ9smjaoQIIGHpUPp7h2EzHgB5_YFyVhGCU9lbg0nm7i1z1dHdFatmWIwt-no3px4Y1O_a_vRNclZvOA_5O5yLQOusP0_zQnk93hbjEDCIxHHIyLEUMqDhW0uF7fzdPUi3C608RKwq_HjCNdRhI3/s1280/maxresdefault%20%2830%29.jpg" alt="Third slide">
     </div>
   </div>
 </div>
+  <div class="container my-4">
+      <h2 class="text-center">Famous Snacks</h2>
+        <div class="row">
+            <!-- Loop to create six cards -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjP2rYpZLCNyrh3kioFJU79tCTRM13HKA2J69i8E2HvOtZOXTF7UlJ9iBVgIB95MMtDO85nG8Ygy-JrFdu8yksw0oPpK16IJKi8_gbigVcdqZJnd9G2iYjJmAhstx-42nPrGj6AZCu2Z7mM9T8RF1NqT-SHpxCbRBFuVViY7JVcPqA83XRKUgImk1zmn6T/s500/Chinese-samosa-WS-500x375.jpg" class="card-img-top" alt="Samosa">
+                    <button class="btn btn-primary add-to-cart cart-tag" data-name="Samosa" data-price="10">
+                        Add to cart
+                    </button>
+                    <div class="fade-in-box">
+                        <h5 class="mb-1">Samosa</h5>
+                        <p class="mb-0">$10.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjbhtpANmxhBcPpLb7HKaOy-Oljk2UWwotN6Y7eopc0-BSzslInTFlfKyb46SDN0TOJpbixypGNTcMfOVrpBgXRe1X5UmLf6-p5tsg8N9weLJOvmFScsd_-XoBEKSx9AsVIGWjpcsLEjVDa8GtErB8GmCa52L6pn7lXn8YYsITBi3pMOgY79mR-AyoX3LHx/s954/Pani-Puri.webp" class="card-img-top" alt="Pani Puri">
+                    <button class="btn btn-primary add-to-cart cart-tag" data-name="Pani Puri" data-price="20">
+                        Add to cart
+                    </button>
+                    <div class="fade-in-box">
+                        <h5 class="mb-1">Pani Puri</h5>
+                        <p class="mb-0">$15.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj4RHmWPQ3yvoCF7evPTnLLeZrw9pgopahBT6osEpyMrt8_0vM3nQpO8ZhP-wwBhCzyi9STugX6A1uIcWL8tbKekWZ4cbHHeDrmrAsfiHZa6AvZY1dSVHx9nJZCvqBNDc6CnoMDnqoIJw9ZWnYa1z7jq0xW4LssaRX3fTmr7Q9DMWCcMGEgVAqG7RO-L9Ck/s800/Vada_Pav-Indian_street_food.JPG" class="card-img-top" alt="Vada Pav">
+                    <button class="btn btn-primary add-to-cart cart-tag" data-name="Vada Pav" data-price="20">
+                        Add to cart
+                    </button>
+                    <div class="fade-in-box">
+                        <h5 class="mb-1">Vada Pav</h5>
+                        <p class="mb-0">$20.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh2erw0CJ69f7gupH89aHO5yQEXKdxrdwGkWymBZNRJwULZwRcaFVtIJ07imfEQxxzJopLdIZsGnZ-TgpNJdCDdknSWZNuxPexKJOHBsWYx67pTLlBbIPcD-RvY2th2YaKa5T-qDbbQMe-IkTOqUx6Mppj17-DCjZ0Cwyfqvzdra8M6bx9FlZgVstRsqKEp/s259/images%20%2811%29.jpg" class="card-img-top" alt="Bhujia">
+                    <button class="btn btn-primary add-to-cart cart-tag" data-name="Bhujia" data-price="48">
+                        Add to cart
+                    </button>
+                    <div class="fade-in-box">
+                        <h5 class="mb-1">Bhujia</h5>
+                        <p class="mb-0">$25.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMy_fzpCPd3LF0Pg2RzMBa-8XQ3O11vumMfJi5f2mgx5hklBFUC7jo3vqpAQuFzp1nSwEaCkcYqP42wRRn7ZgYcU5LwNLifixLQnlBMrrD8C0dOHQ1Mrhfq3T1b3t2sUgSHCASO0prAE5JaDUv5HZnrotX5BEYDOgJCdA0lc1u7RUo5QO_iPdBNsYUIwtq/s259/images%20%2812%29.jpg" class="card-img-top" alt="Pakoras">
+                    <button class="btn btn-primary add-to-cart cart-tag" data-name="Pakoras" data-price="60">
+                        Add to cart
+                    </button>
+                    <div class="fade-in-box">
+                        <h5 class="mb-1">Pakoras</h5>
+                        <p class="mb-0">$30.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjF5LFtDRTNt5zTIroI5Nsm4wmKogH_H733Ob7xq_U21sr-zMJwYGvL-ZorlTvkJU-8PaesIMHVE2UWodnq8lwz7fqys2ee0O2JE0lGamX2qpfk3OJ2u8XRGuPAdtbm1YzAa-r_1lnk6kkNnUP5wy5u0QXph917tA0r1A0U863fQ7J0XqSN7ouQYGuKkRZd/s1200/khaman-dhokla-recipe.jpg" class="card-img-top" alt="Dhokla">
+                    <button class="btn btn-primary add-to-cart cart-tag" data-name="Dhokla" data-price="260">
+                        Add to cart
+                    </button>
+                    <div class="fade-in-box">
+                        <h5 class="mb-1">Dhokla</h5>
+                        <p class="mb-0">$35.00</p>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXkLjb07nddaDLfuJROtcEw0LbxwixQGSZepARiNgRd4b_CS9RScjpii8vqQ6a7DO4yeoxMwr_6wwSnnBP_Ld7TOS5JjS3W1I7EdRkX7lMjdbg-CAw2hlAtwLbrkGy7c-K8dQsv06gU9tzrm_1tJ4UA12Mgm1CNoGIgPVHl7m3paAWDbUeiE5TFrVmU7E6/s1200/chole-bhature.jpg" class="card-img-top" alt="Chole Bhature">
+                    <button class="btn btn-primary add-to-cart cart-tag" data-name="Chole Bhature" data-price="20">
+                        Add to cart
+                    </button>
+                    <div class="fade-in-box">
+                        <h5 class="mb-1">Chole Bhature</h5>
+                        <p class="mb-0">$20.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_E_CknQbiUuxYUJOcYgMyTC_Lvb6wdHYtlNelIgxS62qWGJCDbkbyAbnB6O7rjeeNcXxDzWVqlf1DULJ6WCZ3QkIoIC5EwvgIlr8n6GJ9Syw7cN28hltWxQZfsWZAl15728uD4SPsTM97beFp27alIs0X_-5Xi_niqM0oOgLpKd-3Zm1dV-Jg4ydhxxRk/s275/images%20%2813%29.jpg" class="card-img-top" alt="Banana Chips">
+                    <button class="btn btn-primary add-to-cart cart-tag" data-name="Banana Chips" data-price="20">
+                        Add to cart
+                    </button>
+                    <div class="fade-in-box">
+                        <h5 class="mb-1">Banana Chips</h5>
+                        <p class="mb-0">$25.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbvEPht8iJASetJuzbnWIpGhYA0Uea-x6s1QCLdEvD1ovSjkzArDhwPhZceEUvjBEYTWl0Im79KtVMeGkwFo3CPOrENjwnsCyyEJ5ULnDn2hdKf5LSAhzFeQyUgdcPyQw16wP9mVlPOTRAVOZxwt1cMx5YBxJnLFlIkn9zifIwuKnZqmUHBfzsmNU1PPs9/s752/instant-jalebi-recipe-l-how-to-make-instant-jalebi-at-home-1656392642645.jpg" class="card-img-top" alt="Jalebi">
+                    <button class="btn btn-primary add-to-cart cart-tag" data-name="jalebi" data-price="200">
+                        Add to cart
+                    </button>
+                    <div class="fade-in-box">
+                        <h5 class="mb-1">Jalebi</h5>
+                        <p class="mb-0">$30.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<section class="about-us py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Text Section -->
+            <div class="col-lg-6">
+                <h2 class="mb-4">About Us</h2>
+                <p class="mb-4">Tasty snacks are typically small, flavourful food items enjoyed as a quick bite between meals or during social gatherings. They can be sweet, savory, or a mix of both, depending on the ingredients and preparation methods. Tasty snacks are perfect for satisfying cravings and are enjoyed worldwide, often adapted to suit local flavours and traditions.</p>
+            </div>
+            <!-- image section -->
+            <div class="col-lg-6">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOsY1GSFMeSzs-YU9TSrIlcuWPUoslU-gfswiz_6sZap6aRxK-uYGBxjNIEpgXapre9e-jbKdayByy7nM86ZwsxSJMK12t-SCxFOPNJ7JnM4ClVCA4ZxlNb5qJnqjA66W0Qf99WMS-AyqSytujXXTLivNTYWwAfrVrsskEM__SO-tPgsYeOuXLW1RLKyPO/s1280/maxresdefault%20%2831%29.jpg" class="img-fluid rounded shadow" alt="about us">
+            </div>
+        </div>
+
+    </div>
+</section>
+  <div class="container py-4">
+        <div class="d-flex justify-content-center mb-3">
+            <button class="btn btn-primary filter-btn" onclick="filterCards('category1')">Healthy Snacks</button>
+            <button class="btn btn-secondary filter-btn" onclick="filterCards('category2')">Sweet Snacks</button>
+            <button class="btn btn-info filter-btn" onclick="filterCards('category3')">Packaged Snacks</button>
+            <button class="btn btn-success filter-btn" onclick="filterCards('all')">Show All</button>
+        </div>
+        <div class="row g-4" id="card-container">
+            <!-- Card 1 -->
+            <div class="col-md-4 filter-item category1">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhgkT5nuypxnYVgZIbPwQf8UwF2B8ZmR_JqNJfl7029df47yuIU0j5iUOq6dbWaW9O6QI5KC868KaShvDE0NrcnbJISYPR4jPvbyLWdm89J7uDONKRXWJecgpu9yey9Fvu-uq4v1TJIEtXmoaeRpizV3q_q6anRTwzaA3X6TRwZFv-TFSHctUCHUn6raSfJ/s275/images%20%2814%29.jpg" class="card-img-top" alt="Sprouts Chaat">
+                    <div class="card-overlay">
+                        <h5 class="text-center">Sprouts Chaat</h5>
+                        <button class="btn btn-primary add-to-cart" data-name="Sprouts Chaat" data-price="50">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 filter-item category1">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjgyLS2HGdQ6MngSFka9rsjx1h4064BSEELi9al9qg5pTPbzw-F66hDhw-mToHlZ5Q8Yx_1FnzEVLZ7iAMDrPjji_FAJossIq04aaU4y6C36Oabz9A2Ykm_Wg-mGZmu97duEdr5NqLTYCuZQcJwDEukRoGptYGvlgewtaW3h5YExpz3rkPttSy8UJaigwc_/s275/images%20%2815%29.jpg" class="card-img-top" alt="Roasted Foxnuts (Makhana)">
+                    <div class="card-overlay">
+                        <h5 class="card-overlay">
+                            <h5 class="text-center">Roasted Foxnuts (Makhana)</h5>
+                            <button class="btn btn-success add-to-cart" data-name="Roasted Foxnuts (Makhana)" data-price="$5.49">
+                                Add to cart
+                            </button>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 filter-item category1">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhzmxlHeg3toMgQfa035vA6cMuzCwyGAcPYEF8QjFNTKha5iogMb9dLM2JsE1md00axNLC1JBMcjrGU6cESFfSvGZRA8hA0zb1CWFlqmZJstFkPYdMmFReEHrVIN2XrZQksPKTCNsU8LqmCk5KtUEaab_WbSLkkQjvRXGIP6V3PMA3d4_V35sMITYhpEq-w/s275/images%20%2816%29.jpg" class="card-img-top" alt="Dry Fruits and Nuts">
+                    <div class="card-overlay">
+                        <h5 class="text-center">Dry Fruits and Nuts</h5>
+                        <button class="btn btn-info add-to-cart" data-name="Dry Fruits and Nuts" data-price="800">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 filter-item category1">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-L6y7UPg7A5HwjDYGzVZFjETweEtB2rDVcaOXCLZ5gHYataBv4kW8QQHE7ckLwgXmu9uwN_xyZOM0HEXScZuY8VyII8Gdufe6VCuBiXnuo5Xmkgw1hoG9i6DBukTd764g3eKIBrsaxdhAo1wlpkyekT7yvBVNxUSV2lYCEuBKP3SMdj8hOQ36r69OAmCt/s828/Jowar-Vs-Bajra.png" class="card-img-top" alt="Jowar and Bajra">
+                    <div class="card-overlay">
+                        <h5 class="text-center">Jowar and Bajra</h5>
+                        <button class="btn btn-secondary add-to-cart" data-name="Jowar and Bajra" data-price="3,421">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-md-4 filter-item category2">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIq0Nk_HgyooZG4eZswqt2QxEjFMeTB2-N23gHyAedZOsLKtGBMmEooV5pAwhT4AHpTi9CeJtlkkwHlvRhP99HrINEgrnrMx61LTjeavwOs55Sza6TEQnElvfEM7fuMHdtox7hoUqLl4YAu4uGXOGBfO5hLuJRYRt0XD8Hot3LPYKKmijPpUIMnE8YKUbq/s752/instant-jalebi-recipe-l-how-to-make-instant-jalebi-at-home-1656392642645.jpg" class="card-img-top" alt="Jalebi">
+                    <div class="card-overlay">
+                        <h5 class="text-center">Jalebi</h5>
+                        <button class="btn btn-secondary add-to-cart" data-name="jalebi" data-price="200">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 filter-item category2">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFYEIkvonYh23rZYCDffAXHFYk2UBJzhAq5gZ8VCZBxE5is3VPkbSbBamQxUqO_b5TK_1LCbqgpM4-rOT5TkY3hxSKjZP3rNUO0NzIss9J_SZ2k5fiq-NjH-3nEIxJiW6buEcTy1-9TbEkEXL6ZXTqmkm6btAO_6wqQHf3CRHteLUtkcduqufYI_gml_Am/s300/images%20%2817%29.jpg" class="card-img-top" alt="Gulab Jamun">
+                    <div class="card-overlay">
+                        <h5 class="text-center">Gulab Jamun</h5>
+                        <button class="btn btn-info add-to-cart" data-name="Gulab Jamun" data-price="207">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 filter-item category2">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrqtVv07hrBe94o30H9Mzheov1PfI2gk75J7weUWvl7J3rVq_MFHGtCBvvUn27a9rUe5AbL2jNJkw16OMQU-L2Tn_4t07DcSr5H8Nlwo7hT_H4vWVhhAG8UHNavN3KQF1KmhB0bsT52ORsmc_rm9txwS5xQ3ocuGuaPW8W6yyj33JoVHxIQp0j7tnZXuFt/s259/images%20%2818%29.jpg" class="card-img-top" alt="Mysore Pak">
+                    <div class="card-overlay">
+                        <h5 class="text-center">Mysore Pak</h5>
+                        <button class="btn btn-success add-to-cart" data-name="Mysore Pak" data-price="120">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 filter-item category2">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcNHHaSR7iOmSwBZM_jYnUuqGMv6iIYjYPbIWq1g_I8iDIH8wFQKcgMsu0_hXomcKPSVkLw2nDYznUCRB-8tI4F3hLUqaA4Fe9HmSek0cjf_PCLxeq1m5oV46IW3mIXIQYFfNgx7FfyrwncxZDMReXngRPgaoskFhvV2_Dw-D_kTtjqJc8par-2N-b1H4r/s258/images%20%2819%29.jpg" class="card-img-top" alt="Soan Papdi">
+                    <div class="card-overlay">
+                        <h5 class="text-center">Soan Papdi</h5>
+                        <button class="btn btn-primary add-to-cart" data-name="Soan Papdi" data-price="225">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 filter-item category3">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrHACsZRn0se5ZmdzvcEfueehn7HotcChEKz3LePpnp9-LWDzHXsR3wBga3foX1vK4Ki003JDqcyGBzzsJ7QMtNIpglr2eBOpeLKBabJNrL4DF8PEa1-jeJ7EQyUnng31NIATnYiI2UyXd5TWXQ93TOaJt3rAW76qGi0OV3w1X951b8Zgc4u8HggWogHxv/s257/images%20%2820%29.jpg" class="card-img-top" alt="Potato Chips (Lay's Bingo)">
+                    <div class="card-overlay">
+                        <h5 class="text-center">Potato Chips (Lay's Bingo)</h5>
+                        <button class="btn btn-primary add-to-cart" data-name="Potato Chips" data-prices="20">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 filter-item category3">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhxt6Kr2ZYXnZBb4klAvXX09TiGiJ_fZJTuJGtOHUnpY8uUtI_mcBxv1qXc4x5YyOX9SGmeCgELTn3qiS6fGitY_RXQtF4K5ft8_5rysZe8IcNpy3Q-BtJ8my5YFB2skOWbk8FKnj7Dkwlxgowx3QYXG0WqFrwsZrvbWO5eUC401PRwCNlU0uULaOUPsYl/s600/kurkure.webp" class="card-img-top" alt="Kurkure">
+                    <div class="card-overlay">
+                        <h5 class="text-center">Kurkure (spiced corn puffs)</h5>
+                        <button class="btn btn-success add-to-cart" data-name="Kurkure" data-prices="20">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 filter-item category3">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSwRFRWVDV8dFW53mEw-LnoYL7ewLny5cErtjfc28A6ktjzsQyxjJheZhTjvytiivvzkCBukGxwjBjMCWv_gwce3608VtIweasYx7-ky4pMEfZp8ORa4kK2VRNB1uOdfJmoKa7hdTIR9yUojtZMekKN3rNUEk_w9ienh6XqEaWBNJHv4zw9aUa5N_gpvy8/s275/images%20%2821%29.jpg" class="card-img-top" alt="Popcorn">
+                    <div class="card-overlay">
+                        <h5 class="text-center">Popcorn</h5>
+                        <button class="btn btn-info add-to-cart" data-name="Popcorn" data-price="60">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 filter-item category3">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLPVfMxg2XlqtYJDi42HJ4lh6lHmlpc7EYT2gAJ_eIrZHHXTu5iz0wyglwfufRkuuVZQlxnTdDi-LNea853cKb48AAjlEBCcLe1psIw3SqGyGoJtC296nVaOLkERQyo0txrAbJdRtlawiY7_Kd4FpnKxL5RXyf0kv6ae16Bg8wQuWlKtTZ6ifmw4Hah48X/s300/images%20%2822%29.jpg" class="card-img-top" alt="Instant Noodles">
+                    <div class="card-overlay">
+                        <h5 class="text-center">Instant Noodles</h5>
+                        <button class="btn btn-secondary add-to-cart" data-name="Instant Noodles" data-prices="25">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul class="list-group" id="cart-items">
+              <!-- Cart items will be dynamically added here -->
+            </ul>
+            <p class="mt-3">Total: $<span id="cart-total">0.00</span></p>
+          </div>
+          <div class="modal-footer">
+            <a href="{{ url_for('home') }}" class="btn btn-secondary">close</a>
+            <a href="{{ url_for('login') }}" class="btn btn-primary">Order Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h3 class="card-title text-center mb-4">Subscribe to our Newsletter</h3>
+                <form id="newsletterForm">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="consent" required>
+                        <label class="form-check-label" for="consent">
+                            I agree to receive emails from this website
+                        </label>
+                    </div>
+                    <div class="d-grid">
+                        <button type="button" class="btn btn-primary" id="subscribeButton">Subscribe</button>
+                    </div>
+                </form>
+                    <div id="successMessage" class="alert alert-success mt-3 d-none" role="alert">
+                        Thank you for subscribing to our newsletter!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">&copy; 2024 Tasty Snacks. All Rights Reserved.</p>
+</footer>
+  <script>
+    // Cart functionality
+    const cartItems = [];
+
+    // Add to cart
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', () => {
+        const name = button.getAttribute('data-name');
+        const price = parseFloat(button.getAttribute('data-price'));
+        cartItems.push({ name, price });
+
+        updateCartModal();
+        new bootstrap.Modal(document.getElementById('cartModal')).show();
+      });
+    });
+
+    // Update cart modal
+    function updateCartModal() {
+      const cartItemsContainer = document.getElementById('cart-items');
+      const cartTotalElement = document.getElementById('cart-total');
+
+      // Clear the cart list
+      cartItemsContainer.innerHTML = '';
+      let total = 0;
+
+      cartItems.forEach((item, index) => {
+        total += item.price;
+        const listItem = document.createElement('li');
+        listItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+        listItem.innerHTML = `
+          ${item.name} - $${item.price.toFixed(2)}
+          <button class="btn btn-sm btn-danger delete-item" data-index="${index}">Delete</button>
+        `;
+        cartItemsContainer.appendChild(listItem);
+      });
+
+      cartTotalElement.textContent = total.toFixed(2);
+
+      // Add event listeners for delete buttons
+      document.querySelectorAll('.delete-item').forEach(button => {
+        button.addEventListener('click', (e) => {
+          const index = parseInt(e.target.getAttribute('data-index'), 10);
+          cartItems.splice(index, 1); // Remove item from cart
+          updateCartModal(); // Update the modal
+        });
+      });
+    }
+  </script>
+    <script>
+        function filterCards(category) {
+            const cards = document.querySelectorAll('.filter-item');
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
 <!-- Bootstrap JS and dependencies -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
